@@ -21,7 +21,7 @@
           <h3 class="message">Cadastre-se para ver fotos e vídeos dos seus amigos</h3>
         </header>
         <div class="form-panel">
-          <form>
+          <form method="POST" action="cadastro.php">
             <div>
               <input type="text" name="email" placeholder="Número de Celular ou e-mail" class="input-control">
             </div>
@@ -40,7 +40,7 @@
                 Política de Dados e Política de Cookies.</label>
             </div>
             <div>
-              <input type="button" value="Cadastre-se" class="button button-register" >
+              <input type="submit" value="Cadastre-se" class="button button-register" >
             </div>
           </form>
         </div>
