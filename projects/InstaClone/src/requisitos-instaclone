@@ -1,0 +1,21 @@
+InstaClone
+- Compartilhar fotos
+
+Requisitos Funcionais
+- Autenticação (Cadastro de usuários, tela de login, lembrete de senha, trocar a senha)
+- Enviar uma foto (Efeitos, descrição)
+- Página de perfil
+- Seguidores (Seguir, Deixar de Seguir, listar)
+- Gostar da foto (deixar de gostar)
+- Comentar uma foto
+- Página principal (home)
+
+Requisitos Não Funcionais
+- Desenvolver o sistema Web
+- Hospedar na internet
+- Design Responsivo
+- Boas práticas de desenvolvimento
+
+Tecnologias
+- HTML, CSS, JS
+- PHP7, MYSQL, Apache

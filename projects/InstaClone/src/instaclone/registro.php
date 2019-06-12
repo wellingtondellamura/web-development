@@ -23,16 +23,16 @@
         <div class="form-panel">
           <form method="POST" action="cadastro.php">
             <div>
-              <input type="text" name="email" placeholder="Número de Celular ou e-mail" class="input-control">
+              <input type="email" name="email" required="true" placeholder="Número de Celular ou e-mail" class="input-control">
             </div>
             <div>
-              <input type="text" name="nome" placeholder="Nome completo" class="input-control">
+              <input type="text" name="nome" required="true"  placeholder="Nome completo" class="input-control">
             </div>
             <div>
-              <input type="text" name="usuario" placeholder="Nome de Usuário" class="input-control">
+              <input type="text" name="usuario" pattern="[a-zA-Z]+" required="true"  placeholder="Nome de Usuário" class="input-control">
             </div>
             <div>
-              <input type="password" name="senha" placeholder="Senha" class="input-control">
+              <input type="password" name="senha" required="true"  placeholder="Senha" class="input-control">
             </div>
             <div>
               <input type="checkbox" name="concordo">
