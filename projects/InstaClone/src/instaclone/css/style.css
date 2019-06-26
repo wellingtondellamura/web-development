@@ -9,7 +9,13 @@
   background-size: cover;
 }
 
-
+.error ul {
+  color: brown;
+  font-size: 12px;
+  text-align: left;
+  border: #2A4B7C solid thin;
+  margin: 10px;
+}
 
 .title {
   font-size: 36px;
