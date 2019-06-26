@@ -30,6 +30,10 @@ if (!isset($concordo)){
 if (strlen($messages) > 0){
   $messages = "<ul>".$messages."</ul>";
   toSession("messages", $messages);
+  toSession("email", $email);
+  toSession("nome", $nome);
+  toSession("usuario", $usuario);
+
   header("Location: ../../register.php");   //https://stackoverflow.com/questions/2112373/php-page-redirect
   exit();
 }

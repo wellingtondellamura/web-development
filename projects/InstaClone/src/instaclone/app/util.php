@@ -16,10 +16,19 @@ function fromPost($param){
     $_SESSION[$key] = $value;
   }
 
+  function getUser(){
+    session_start();
+    if (!isset($_SESSION) ||!isset($_SESSION["autenticado"])){
+      return null;
+    }
+    return $_SESSION["autenticado"];
+  }
+
   function fromSession($param){
     $value = "";
-    session_start();
-    if (isset($_SESSION) && isset($_SESSION[$param])){
+    if (!isset($_SESSION))
+      session_start();
+    if (isset($_SESSION[$param])){
       $value = $_SESSION[$param];
       unset($_SESSION[$param]);
     }

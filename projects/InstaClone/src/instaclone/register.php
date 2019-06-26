@@ -25,16 +25,16 @@
         <div class="form-panel">
           <form method="POST" action="app/logic/process_register.php">
             <div>
-              <input type="email" name="email" placeholder="Número de Celular ou e-mail" class="input-control">
+              <input type="email" value="<?=fromSession("email")?>" name="email" placeholder="Número de Celular ou e-mail" class="input-control">
             </div>
             <div>
-              <input type="text" name="nome" placeholder="Nome completo" class="input-control">
+              <input type="text" value="<?=fromSession("nome")?>" name="nome" placeholder="Nome completo" class="input-control">
             </div>
             <div>
-              <input type="text" name="usuario"  placeholder="Nome de Usuário" class="input-control">
+              <input type="text" value="<?=fromSession("usuario")?>" name="usuario"  placeholder="Nome de Usuário" class="input-control">
             </div>
             <div>
-              <input type="password" name="senha" placeholder="Senha" class="input-control">
+              <input type="password"  name="senha" placeholder="Senha" class="input-control">
             </div>
             <div>
               <input type="checkbox" name="concordo">

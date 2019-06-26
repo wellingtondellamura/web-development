@@ -23,12 +23,12 @@
           <h3 class="message">Informe seus dados para continuar</h3>
         </header>
         <div class="form-panel">
-          <form method="POST" action="cadastro.php">
+          <form method="POST" action="app/logic/process_login.php">
             <div>
-              <input type="email" name="email" required="true" placeholder="Número de Celular ou e-mail" class="input-control">
+              <input type="text" name="usuario" value="<?=fromSession("usuario")?>" placeholder="Nome de usuário" class="input-control">
             </div>            
             <div>
-              <input type="password" name="senha" required="true"  placeholder="Senha" class="input-control">
+              <input type="password" name="senha"  placeholder="Senha" class="input-control">
             </div>
             <div>
               <input type="submit" value="Entrar" class="button button-register" >
