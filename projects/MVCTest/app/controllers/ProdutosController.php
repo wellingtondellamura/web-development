@@ -3,8 +3,9 @@
 namespace App\Controllers;
 
 use App\Models\Produto;
+use App\Controllers\BaseController;
 
-class ProdutosController{
+class ProdutosController extends BaseController{
 
     public function promocao(){
         $list = [
@@ -13,6 +14,7 @@ class ProdutosController{
             new Produto("Gasosa Paranaense", 8.55, "gasosa.jpg"),
             new Produto("Pepsi Twist", 1.99, "pepsi.jpg")
         ];
-        var_dump($list);
+        
+        return $this->response("produtos/promocao", $list);
     }
 }

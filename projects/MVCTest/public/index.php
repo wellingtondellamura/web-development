@@ -2,21 +2,35 @@
     
     require_once "../bootstrap.php";
 
-    $c = $_GET['c'];
-    $a = $_GET['a'];
+    if (isset($_SERVER['PATH_INFO'])){
+        $path = $_SERVER['PATH_INFO'];
+    } else {
+        $path = "/home/index";
+    }
 
-    $ns = "App\\Controllers\\";
-    $sfx = "Controller";
-    $class = $ns.$c.$sfx;
+    
+    $params = explode("/", $path);
+    
+    $controllerName = $params[1];
+    $action = $params[2];
+    if (isset($params[3])){
+        $id = $params[3];
+    }
+    
+    $namespace = "App\\Controllers\\";
+    $suffix = "Controller";
+    $class = $namespace.$controllerName.$suffix;
 
     $controller = new $class();
-    $controller->$a();
+    echo $controller->$action();
 
-    //var_dump($class);
+    
+ //var_dum $_SERVER['REQUEST_URI'];
 
-    // use App\Controllers\ProdutosController;
 
-    // $controller = new ProdutosController();
 
-    // $controller->promocao();
-
+// REQUEST_URI: (string) "/public/produtos/promocao"
+// REQUEST_METHOD: (string) "GET"
+// SCRIPT_NAME: (string) "/public/index.php"
+// PATH_INFO: (string) "/produtos/promocao"
+// PHP_SELF: (string) "/public/index.php/produtos/promocao"
