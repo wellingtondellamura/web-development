@@ -2,20 +2,21 @@
     
     require_once "../bootstrap.php";
 
-    use App\Models\Categoria;
-    use App\Models\Produto;
+    $c = $_GET['c'];
+    $a = $_GET['a'];
 
-    $c = new Categoria();
-    $c->id = 1;
-    $c->nome = "Laticínios";
-    
-    
+    $ns = "App\\Controllers\\";
+    $sfx = "Controller";
+    $class = $ns.$c.$sfx;
 
-    $p = new Produto();
-    $p->nome = "Toddynho";
-    $p->preco = "10.99";
-    $p->foto = "toddynho.png";
-    $p->categoria = $c;
+    $controller = new $class();
+    $controller->$a();
 
-    var_dump($p);
+    //var_dump($class);
+
+    // use App\Controllers\ProdutosController;
+
+    // $controller = new ProdutosController();
+
+    // $controller->promocao();
 
