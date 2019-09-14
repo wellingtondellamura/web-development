@@ -23,7 +23,9 @@ class Flash
     public static function get($name)
     {
         self::checkSession();
-        return $_SESSION[self::$FLASH][$name];
+        $value = $_SESSION[self::$FLASH][$name];
+        self::remove($name);
+        return $value;
     }
 
     public static function remove($name) 

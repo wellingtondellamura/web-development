@@ -2,6 +2,7 @@
     
     require_once "../bootstrap.php";
 
+
     if (isset($_SERVER['PATH_INFO'])){
         $path = $_SERVER['PATH_INFO'];
     } else {
