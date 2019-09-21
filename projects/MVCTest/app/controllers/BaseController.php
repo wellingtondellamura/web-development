@@ -8,11 +8,14 @@ class BaseController
 {
     private static $VIEWS_DIR = "../app/views/";
 
-    public function response($view, $params)
+    public function response($view, $title, $params)
     {
-        Flash::add("params", $params);
         $viewName = self::$VIEWS_DIR.$view.".php";
-        require_once($viewName);
+        Flash::add("params", $params);
+        Flash::add("page", $viewName);
+        Flash::add("title",$title);                
+        $templateName = self::$VIEWS_DIR."_templates/main.php";
+        require_once($templateName);
     }
 
 }

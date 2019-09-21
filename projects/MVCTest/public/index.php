@@ -18,6 +18,8 @@
         $id = $params[3];
     }
     
+    //list de middlewares
+
     $namespace = "App\\Controllers\\";
     $suffix = "Controller";
     $class = $namespace.$controllerName.$suffix;

@@ -15,6 +15,16 @@ class ProdutosController extends BaseController{
             new Produto("Pepsi Twist", 1.99, "pepsi.jpg")
         ];
         
-        return $this->response("produtos/promocao", $list);
+        return $this->response("produtos/promocao", 
+                                "Produtos em Promoção",$list);
     }
+
+    public function index(){
+
+    }
+
+    public function criar(){
+        
+    }
+
 }
