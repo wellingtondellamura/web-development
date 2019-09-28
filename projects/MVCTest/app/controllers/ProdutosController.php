@@ -24,7 +24,7 @@ class ProdutosController extends BaseController{
     }
 
     public function criar(){
-        
+        return "Criar Produto";
     }
 
 }

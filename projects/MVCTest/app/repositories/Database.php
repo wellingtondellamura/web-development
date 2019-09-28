@@ -2,6 +2,8 @@
 
 namespace App\Repositories;
 
+use \PDO;
+
 class Database {
 
     public static $USERNAME = 'root';
