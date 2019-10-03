@@ -9,13 +9,14 @@
 </head>
 <body>
     <h1>Minha lista de produtos</h1>
-
+    <a href="/produtos/adicionar" class="btn btn-primary">Adicionar</a>
     <table class="table table-striped">
         <thead>
             <th>id</th>
             <th>descrição</th>
             <th>valor</th>
             <th>detalhes</th>
+            <th>ações</th>
         </thead>
         <tbody>
             @foreach ($produtos as $produto)
@@ -24,9 +25,23 @@
                 <td>{{$produto->descricao}}</td>
                 <td>{{$produto->valor}}</td>
                 <td>{{$produto->detalhes}}</td>
+                <td>
+                    <a class="btn btn-sm btn-secondary" href="#">Alterar</a>
+
+                    <a class="btn btn-sm btn-danger" href="/produtos/remover/{{$produto->id}}">Remover</a>
+                </td>
             </tr>
             @endforeach
         </tbody>
     </table>
+ @if ($errors->any())
+        <div>
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
 </body>
 </html>

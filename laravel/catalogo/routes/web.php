@@ -16,3 +16,9 @@ Route::get('/', function () {
 });
 
 Route::get('/produtos', 'ProdutosController@index');
+Route::get('/produtos/remover/{id}', 'ProdutosController@remover');
+Route::post('/produtos', 'ProdutosController@gravar');
+
+Route::get('/produtos/adicionar', function () {
+    return view('produtos.adicionar');
+});
