@@ -12,13 +12,24 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('front');
 });
 
-Route::get('/produtos', 'ProdutosController@index');
-Route::get('/produtos/remover/{id}', 'ProdutosController@remover');
-Route::post('/produtos', 'ProdutosController@gravar');
+Route::get('/login', [ 'as' => 'login', 'uses' => 'AuthController@login']);
+Route::post('/authenticate','AuthController@authenticate');
 
-Route::get('/produtos/adicionar', function () {
-    return view('produtos.adicionar');
+Route::get('/register', function () {
+    return view('auth.register');
 });
+Route::post('/register','AuthController@storeUser');
+
+//Route::group(['middleware'=>'auth'],function(){
+    Route::get('/produtos', 'ProdutosController@index');
+    Route::get('/produtos/remover/{id}', 'ProdutosController@remover');
+    Route::post('/produtos', 'ProdutosController@gravar');
+
+    Route::get('/produtos/adicionar', function () {
+        return view('produtos.adicionar');
+    });
+
+//});

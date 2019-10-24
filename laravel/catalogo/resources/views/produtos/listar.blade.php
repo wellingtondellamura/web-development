@@ -1,21 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Lista de Produtos</title>
-</head>
-<body>
-    <h1>Minha lista de produtos</h1>
-    <a href="/produtos/adicionar" class="btn btn-primary">Adicionar</a>
-    <table class="table table-striped">
+@extends('layout.master')
+
+@section('title','Lista de Produtos')
+
+@section('content')
+    <div class="row">
+        <div class=" col-12 text-right" style="margin-bottom: 15px;">
+                <a href="/produtos/adicionar" class="btn btn-primary">Adicionar</a>
+        </div>
+
+    </div>
+    <table class="table table-striped table-sm">
         <thead>
             <th>id</th>
             <th>descrição</th>
             <th>valor</th>
-            <th>detalhes</th>
+
             <th>ações</th>
         </thead>
         <tbody>
@@ -24,11 +23,12 @@
                 <td>{{$produto->id}}</td>
                 <td>{{$produto->descricao}}</td>
                 <td>{{$produto->valor}}</td>
-                <td>{{$produto->detalhes}}</td>
                 <td>
                     <a class="btn btn-sm btn-secondary" href="#">Alterar</a>
+                    <a class="btn btn-sm btn-info" href="#">Visualizar</a>
+                        <a class="btn btn-sm btn-danger" href="/produtos/remover/{{$produto->id}}">Remover</a>
 
-                    <a class="btn btn-sm btn-danger" href="/produtos/remover/{{$produto->id}}">Remover</a>
+
                 </td>
             </tr>
             @endforeach
@@ -43,5 +43,4 @@
             </ul>
         </div>
     @endif
-</body>
-</html>
+@endsection

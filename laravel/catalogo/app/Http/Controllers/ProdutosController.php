@@ -8,7 +8,7 @@ class ProdutosController extends Controller
 {
     public function index()
     {
-       $produtos =  Produto::All();
+       $produtos =  Produto::where('valor','>=','1')->get();
        return view('produtos.listar', compact('produtos'));
     }
 
@@ -25,7 +25,7 @@ class ProdutosController extends Controller
 
         $data = $request->all();
         //dd($data);
-        
+
         // $p = new Produto();
         // $p->descricao = $data['descricao'];
         // $p->valor = $data['valor'];
